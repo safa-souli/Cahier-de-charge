@@ -1,0 +1,336 @@
+\documentclass[16pt,fleqn]{article} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+\includepdf[pages=-]{cover.pdf}
+\bgimg{Pictures/border.png} % met une image de fond sour toutes les pages à partir d'ici
+
+\section{Contexte et définition du problème}
+
+Dans cette vie réelle, nous allons découvrir de nouvelles idées qui nous rendent la vie plus facile que par le passé et automatique. Donc, dans ce cas, nous avons travaillé dans le domaine agricole, dans ce domaine la plupart des gens ont des problèmes avec les aliments frais de la ferme que nous avons eu des fraudes.
+Il y a aussi une pénurie de matières premières pour l'agriculture comme le lait, le poisson, le poulet, les œufs, etc.
+
+\section{Objectif du projet}
+Nous voulons offrir un meilleur service dans nos réponses aux clients à l'aide d'un outil de l'inter-médiation entre le fermes et les clients. Aujourd'hui le taux de satisfaction est à 60\%, nous visons les 80\% un an après la mise en place du nouvel outil.
+
+\section{Périmètre}
+Nous concentrons sur les clients de la nord de la Tunisie, avec domaine de plateforme : www.freshnat.com.tn.
+
+\section{Acteur}
+\tabulinesep = 3mm
+\noindent
+\begin{longtabu} to \textwidth {|[3pt,ocre]|[1pt,ocre]c|[ocre]X[5mm]|[1pt,ocre]|[3pt,ocre]}
+    \caption{Définition des acteurs}\\
+    \arrayrulecolor{ocre}
+    \hhline{|=|=|}
+        \color{ocre}\textbf{Acteur} & \color{ocre}\textbf{Définition}\\
+        \hhline{|=|=|}
+    Agriculteur & C'est l'acteur qui peut vendre ces produits aux clients. \\\hline
+    Client & C'est l'acteur qui peut acheter des produits d'un agriculteur en ligne par commande. \\\hline
+    Livreur & C'est l'acteur qui livre les commandes aux clients. \\\hline
+    Système & C'est l'acteur utilisé pour recommandation les produit et les agriculteurs \\\hline
+   Administrateur & C'est l'acteur qui gère tous.\\\hhline{|=|=|}
+\end{longtabu}
+
+\section{Description fonctionnelle des besoins}
+Notre plateforme Centré autour de quatre acteurs:
+
+
+\subsection{Client}
+Les fonctionnalités de cet acteur sont :
+\subsubsection{Gérer d'accès}
+\begin{itemize}
+    \item \textbf{S'authentifier :} Où lequel peut accéder à son espace privé de plateforme après l'inscription.
+    \item \textbf{S'inscrire :} Où lequel peut créer son espace privé de plateforme pour accéder.
+    \item \textbf{Confirmer mail :} Où lequel peut confirmer son mail.
+    \item \textbf{Réinitialiser mot de passe :} Où lequel peut créer un nouveau mot de passe après une confirmation de compte.
+\end{itemize}
+\subsubsection{Mise à jour profil :}
+\begin{itemize}
+    \item \textbf{Modifier profil :} Où lequel peut modifier ses informations de son compte.
+    \item \textbf{Supprimer profil :} Où lequel peut supprimer son compte.
+\end{itemize}
+
+\subsubsection{Consulter ferme :}
+Où lequel peut consulter les détails de ferme.
+
+\subsubsection{Gérer avis :}
+\begin{itemize}
+    \item \textbf{Consulter avis :} Où lequel peut consulter les avis des produits.
+    \item \textbf{Donner avis :} Où lequel peut donner un avis d'une ferme.
+    \item \textbf{Modifier avis :} Où lequel peut modifier son avis sur une ferme.
+    \item \textbf{Supprimer avis :} Où lequel peut supprimer son avis sur une ferme.
+\end{itemize}
+
+\subsubsection{Consulter produit :}
+Où lequel peut consulter des produit d'une ferme.
+
+\subsubsection{Gérer note :}
+\begin{itemize}
+    \item \textbf{Noter produit :} Où lequel peut donner une note comprise entre 1 et 5 sur un produit d'une ferme.
+    \item \textbf{Consulter note :} Où lequel peut consulter les notes des produits.
+    \item \textbf{Annuler note :} Où lequel peut annuler sa note.
+\end{itemize}
+
+\subsubsection{Consulter catégorie :}
+Où lequel peut consulter les produits par catégorie.
+
+\subsubsection{Gérer panier :}
+    \begin{itemize}
+        \item \textbf{Consulter panier :} Où lequel peut consulter liste des produit ajouté récemment au panier.
+        \item \textbf{Ajouter produit au panier :} Où lequel peut ajouter un produit au son panier.
+        \item \textbf{Supprimer produit du panier :} Où lequel peut modifier les quantités des produits de son panier.
+    \end{itemize}
+    
+\subsubsection{Gérer commande :}
+    \begin{itemize}
+        \item \textbf{Commander produit :} Où lequel peut commander des produit ajouté récemment au panier.
+        \item \textbf{Annuler commande :} Où lequel peut annuler sa commande.
+        \item \textbf{Suivre commande :} Où lequel peut suivre si la commande est en attende, en cours ou préparée.
+    \end{itemize}
+    
+\subsubsection{Gérer livraison :}
+Où lequel peut suivre la livraison de sa commande est déjà confirmé
+\begin{itemize}
+        \item \textbf{Suivre livraison :} Où lequel peut suivre la livraison de sa commande est déjà confirmé
+        \item \textbf{Demande livraison :} Où lequel peut envoyer une demande de livraison au livreur.
+    \end{itemize}
+
+\subsubsection{Gérer forum :}
+    \begin{itemize}
+        \item \textbf{Consulter forum :} Où lequel peut consulter un forum.
+        \item \textbf{Ajouter forum :} Où lequel peut ajouter un forum.
+        \item \textbf{Modifier forum :} Où lequel peut modifier son forum.
+        \item \textbf{Supprimer forum :} Où lequel peut supprimer son forum.
+    \end{itemize}
+    
+\subsubsection{Gérer commentaire :}
+    \begin{itemize}
+        \item \textbf{Commenter forum :} Où lequel peut commenter sur un forum.
+        \item \textbf{consulter commentaire :} Où lequel peut consulter les commentaires sur un forum.
+        \item \textbf{Modifier commentaire :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer commentaire :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}
+    
+\subsubsection{Gérer répondre :}
+    \begin{itemize}
+        \item \textbf{Répondre commentaire :} Où lequel peut commenter sur un forum.
+        \item \textbf{Consulter répondre :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Modifier répondre :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer répondre :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}  
+    
+\subsubsection{Gérer paiement :}
+    \begin{itemize}
+        \item \textbf{Choisir mode de paiement :} Où lequel peut choisir mode de paiement (Chèque, Carte Bancaire, Paypal ou Espèce).
+        \item \textbf{Payer commande:} Où lequel peut modifier son commentaire sur un forum.
+    \end{itemize}
+    
+\subsection{Agriculteur}
+Les fonctionnalités de cet acteur sont :
+\subsubsection{Gérer d'accès}
+\begin{itemize}
+    \item \textbf{S'authentifier :} Où lequel peut accéder à son espace privé de plateforme après l'inscription.
+    \item \textbf{Demande d'inscrire :} Où lequel peut demander d'être un agriculteur
+    \item \textbf{Réinitialiser mot de passe :} Où lequel peut créer un nouveau mot de passe après une confirmation de compte.
+\end{itemize}
+\subsubsection{Mise à jour profil :}
+\begin{itemize}
+    \item \textbf{Modifier profil :} Où lequel peut modifier ses informations de son compte.
+    \item \textbf{Demander suppression profil :} Où lequel peut envoyer demande au administrateur pour supprimer son compte.
+\end{itemize}
+
+\subsubsection{Gérer ferme :}
+\begin{itemize}
+    \item \textbf{Consulter ferme :} Où lequel peut consulter des fermes.
+    \item \textbf{Ajouter ferme :} Où lequel peut ajouter une ferme.
+    \item \textbf{Modifier ferme :} Où lequel peut modifier sa ferme.
+    \item \textbf{Supprimer ferme :} Où lequel peut supprimer sa ferme.
+\end{itemize}
+\subsubsection{Consulter avis :}
+Où lequel peut consulter les avis d'une ferme.
+
+\subsubsection{Gérer produit :}
+\begin{itemize}
+    \item \textbf{Consulter produit :} Où lequel peut consulter les produits des fermes.
+    \item \textbf{Ajouter produit :} Où lequel peut ajouter un produit au son ferme.
+    \item \textbf{Modifier produit :} Où lequel peut modifier les informations d'un produit ajoutées par lui.
+    \item \textbf{Supprimer produit :} Où lequel peut supprimer un produit de son ferme.
+\end{itemize}
+
+\subsubsection{Gérer note :}
+\begin{itemize}
+    \item \textbf{Noter produit :} Où lequel peut donner une note comprise entre 1 et 5 sur un produit d'une ferme.
+    \item \textbf{Consulter note :} Où lequel peut consulter les notes des produits.
+    \item \textbf{Annuler note :} Où lequel peut annuler sa note.
+\end{itemize}
+
+\subsubsection{Consulter catégorie :}
+Où lequel peut consulter les produits par catégorie.
+    
+\subsubsection{Gérer commande :}
+    \begin{itemize}
+        \item \textbf{Consulter commande :} Où lequel peut consulter les commandes de son ferme.
+        \item \textbf{Préparer commande :} Où lequel peut accepter, refuser ou mettre en cours une commande.
+        \item \textbf{Supprimer commande :} Où lequel peut supprimer les commandes de sa ferme.
+    \end{itemize}
+    
+\subsubsection{Suivre livraison :}
+Où lequel peut suivre le livreur pour arrive à sa ferme.
+
+\subsubsection{Gérer forum :}
+    \begin{itemize}
+        \item \textbf{Consulter forum :} Où lequel peut consulter un forum.
+        \item \textbf{Ajouter forum :} Où lequel peut ajouter un forum.
+        \item \textbf{Modifier forum :} Où lequel peut modifier son forum.
+        \item \textbf{Supprimer forum :} Où lequel peut supprimer son forum.
+    \end{itemize}
+    
+\subsubsection{Gérer commentaire :}
+    \begin{itemize}
+        \item \textbf{Commenter forum :} Où lequel peut commenter sur un forum.
+        \item \textbf{Consulter commentaire :} Où lequel peut consulter les commentaires des forums.
+        \item \textbf{Modifier commentaire :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer commentaire :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}
+    
+\subsubsection{Gérer répondre :}
+    \begin{itemize}
+        \item \textbf{Répondre commentaire :} Où lequel peut commenter sur un forum.
+        \item \textbf{Consulter répondre :} Où lequel peut consulter les  répondes des commentaires des forums.
+        \item \textbf{Modifier répondre :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer répondre :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}  
+
+\subsection{Livreur}
+Les fonctionnalités de cet acteur sont :
+\subsubsection{Gérer d'accès}
+\begin{itemize}
+    \item \textbf{S'authentifier :} Où lequel peut accéder à son espace privé de plateforme après l'inscription.
+    \item \textbf{Demande d'inscrire :} Où lequel peut demander d'être un agriculteur
+    \item \textbf{Confirmer mail :} Où lequel peut confirmer son mail.
+    \item \textbf{Réinitialiser mot de passe :} Où lequel peut créer un nouveau mot de passe après une confirmation de compte.
+\end{itemize}
+\subsubsection{Mise à jour profil :}
+\begin{itemize}
+    \item \textbf{Modifier profil :} Où lequel peut modifier ses informations de son compte.
+    \item \textbf{Demander suppression profil :} Où lequel peut envoyer demande au administrateur pour supprimer son compte.
+\end{itemize}
+
+\subsubsection{Consulter ferme :}
+Où lequel peut consulter les détails de ferme.
+
+\subsubsection{Gérer avis :}
+\begin{itemize}
+    \item \textbf{Donner avis :} Où lequel peut donner un avis d'une ferme.
+    \item \textbf{Consulter avis :} Où lequel peut consulter des avis de fermes.
+    \item \textbf{Modifier avis :} Où lequel peut modifier son avis sur une ferme.
+    \item \textbf{Supprimer avis :} Où lequel peut supprimer son avis sur une ferme.
+\end{itemize}
+
+\subsubsection{Consulter produit :}
+Où lequel peut consulter des produit d'une ferme.
+
+\subsubsection{Gérer note :}
+\begin{itemize}
+    \item \textbf{Noter produit :} Où lequel peut donner une note comprise entre 1 et 5 sur un produit d'une ferme.
+    \item \textbf{Annuler note :} Où lequel peut annuler sa note.
+\end{itemize}
+
+\subsubsection{Consulter catégorie :}
+Où lequel peut consulter les produits par catégorie.
+
+\subsubsection{Gérer panier :}
+    \begin{itemize}
+        \item \textbf{Consulter panier :} Où lequel peut consulter son panier.
+        \item \textbf{Ajouter produit au panier :} Où lequel peut ajouter un produit au son panier.
+        \item \textbf{Modifier panier :} Où lequel peut modifier les quantités des produits de son panier.
+        \item \textbf{Supprimer produit de panier :} Où lequel peut supprimer des produits de son panier.
+    \end{itemize}
+    
+\subsubsection{Gérer commande :}
+    \begin{itemize}
+        \item \textbf{Commander produit :} Où lequel peut commander des produit ajouté récemment au panier.
+        \item \textbf{Consulter commande :} Où lequel peut consulter sa commande.
+        \item \textbf{Annuler commande :} Où lequel peut annuler sa commande.
+        \item \textbf{Suivre commande :} Où lequel peut suivre si la commande est en attende, en cours ou préparée.
+    \end{itemize}
+    
+\subsubsection{Gérer livraison :}
+    \begin{itemize}
+        \item \textbf{Consulter livraison :} Où lequel peut consulter une livraison.
+        \item \textbf{Traiter livraison :} Où lequel peut accepter, refusé, mettre en cours une demande de livraison ou changer ligne de transport.
+        \item \textbf{annuler livraison :} Où lequel peut annuler une livraison.
+    \end{itemize}
+    
+\subsubsection{Gérer forum :}
+    \begin{itemize}
+        \item \textbf{Consulter forum :} Où lequel peut consulter des forums.
+        \item \textbf{Ajouter forum :} Où lequel peut ajouter un forum.
+        \item \textbf{Modifier forum :} Où lequel peut modifier son forum.
+        \item \textbf{Supprimer forum :} Où lequel peut supprimer son forum.
+    \end{itemize}
+    
+\subsubsection{Gérer commentaire :}
+    \begin{itemize}
+        \item \textbf{Commenter forum :} Où lequel peut commenter sur un forum.
+        \item \textbf{Consulter commentaire :} Où lequel peut consulter des commentaires de forums.
+        \item \textbf{Modifier commentaire :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer commentaire :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}
+    
+\subsubsection{Gérer répondre :}
+    \begin{itemize}
+        \item \textbf{Répondre commentaire :} Où lequel peut commenter sur un forum.
+        \item \textbf{Consulter répondre :} Où lequel peut consulter les répondes de commentaires sur un forum.
+        \item \textbf{Modifier répondre :} Où lequel peut modifier son commentaire sur un forum.
+        \item \textbf{Supprimer répondre :} Où lequel peut supprimer son commentaire d'un forum.
+    \end{itemize}  
+    
+\subsection{Système}
+Les fonctionnalités de cet acteur sont :
+\subsubsection{Gérer recommandation}
+\begin{itemize}
+    \item  \textbf{Recommander agriculteur : }
+    Où lequel recommander des agriculteurs aux clients ou visiteurs.
+    \item  \textbf{Recommander produit : }
+    Où lequel recommander des produits aux clients ou visiteurs.
+    \item  \textbf{Recommander livreur : }
+    Où lequel recommander des livreurs aux clients ou visiteurs.
+\end{itemize}
+
+\subsection{Administrateur}
+
+Les fonctionnalités de cet acteur sont :
+
+\subsubsection{Gérer demande d'inscription:}
+\begin{itemize}
+    \item \textbf{Accepter demande :} Où lequel peut accepter les demandes d'inscription des agriculteurs ou des livreurs.
+    \item \textbf{Refusé demande :} Où lequel peut refuser les demandes d'inscription des agriculteurs ou des livreurs.
+\end{itemize}
+\subsubsection{Gérer demande de suppression:}
+\begin{itemize}
+    \item \textbf{Accepter demande :} Où lequel peut accepter les demandes de suppression des comptes des agriculteurs ou des livreurs.
+    \item \textbf{Refuser demande :} Où lequel peut refuser les demandes de suppression des comptes des agriculteurs ou des livreurs.
+\end{itemize}
+
+
+\subsubsection{Gérer catégorie :}
+Où lequel peut consulter les produits par catégorie.
+    \begin{itemize}
+        \item \textbf{Consulter catégorie :} Où lequel peut Consulter des catégories de produits.
+        \item \textbf{Ajouter catégorie :} Où lequel peut ajouter une catégorie de produits.
+        \item \textbf{Modifier catégorie :} Où lequel peut modifier une catégorie de produits.
+        \item \textbf{Supprimer catégorie :} Où lequel peut supprimer une catégorie de produits.
+    \end{itemize}
+    
+\subsection{Délais}
+\end{document}
